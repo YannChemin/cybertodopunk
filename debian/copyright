@@ -1,0 +1,30 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cybertodopunk
+Source: https://github.com/YannChemin/cybertodopunk
+
+Files: *
+Copyright: none (public domain dedication)
+License: Unlicense
+
+Files: data/fonts/Orbitron-VariableFont_wght.ttf
+Copyright: 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)
+License: OFL-1.1
+
+Files: data/fonts/Rajdhani-*.ttf
+Copyright: 2014 Indian Type Foundry (info@indiantypefoundry.com)
+License: OFL-1.1
+
+License: Unlicense
+ This is free and unencumbered software released into the public domain.
+ .
+ Anyone is free to copy, modify, publish, use, compile, sell, or
+ distribute this software, either in source code form or as a compiled
+ binary, for any purpose, commercial or non-commercial, and by any
+ means.
+ .
+ See https://unlicense.org
+
+License: OFL-1.1
+ This Font Software is licensed under the SIL Open Font License, Version 1.1.
+ The full text is in data/fonts/OFL-Orbitron.txt and data/fonts/OFL-Rajdhani.txt,
+ and at https://openfontlicense.org

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=CyberTodoPunk
+GenericName=Meeting Actions
+Comment=My open actions from the ACTIONS.tex files of meeting reports
+Exec=@BINDIR@/cybertodopunk
+Icon=io.github.yannchemin.CyberTodoPunk
+Terminal=false
+Categories=GTK;GNOME;Office;ProjectManagement;
+Keywords=todo;tasks;actions;meeting;latex;report;compte rendu;
+StartupNotify=true
+DBusActivatable=false

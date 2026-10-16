@@ -1,0 +1,209 @@
+/* CyberTodoPunk: MetaMonitor's Night City neon, applied to a to-do list.
+ * Tokens mirror cybertodopunk/brand.py (and MetaMonitor's docs/brand/BRAND.md).
+ * SPDX-License-Identifier: Unlicense
+ */
+
+@define-color ctp_void #07080e;
+@define-color ctp_panel #10121c;
+@define-color ctp_yellow #fcee0a;
+@define-color ctp_cyan #00f0ff;
+@define-color ctp_magenta #ff2a6d;
+@define-color ctp_red #ff003c;
+@define-color ctp_green #39ff88;
+@define-color ctp_text #e6f1ff;
+@define-color ctp_dim #7a86a8;
+
+/* Recolour libadwaita itself. */
+@define-color accent_color @ctp_yellow;
+@define-color accent_bg_color @ctp_yellow;
+@define-color accent_fg_color #0b0b0b;
+@define-color window_fg_color @ctp_text;
+@define-color popover_bg_color #12141f;
+@define-color dialog_bg_color #0d0f18;
+@define-color card_bg_color alpha(#ffffff, 0.04);
+
+window.ctp-window {
+  background-color: @ctp_void;
+  background-image:
+    repeating-linear-gradient(to bottom, alpha(#ffffff, 0.018) 0px, alpha(#ffffff, 0.018) 1px,
+                              transparent 1px, transparent 3px),
+    radial-gradient(ellipse at 88% -10%, alpha(@ctp_magenta, 0.16) 0%, transparent 45%),
+    radial-gradient(ellipse at 5% 0%, alpha(@ctp_cyan, 0.12) 0%, transparent 40%),
+    linear-gradient(to bottom, #0c0e18, @ctp_void);
+  color: @ctp_text;
+  font-family: "Rajdhani", "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.ctp-window headerbar {
+  background: transparent;
+  box-shadow: inset 0 -1px alpha(@ctp_cyan, 0.25);
+  min-height: 52px;
+}
+
+.ctp-window viewswitcherbar actionbar {
+  background: transparent;
+  box-shadow: inset 0 1px alpha(@ctp_cyan, 0.25);
+}
+
+.ctp-window headerbar button,
+.ctp-window viewswitcher button {
+  border-radius: 0;
+}
+
+.ctp-wordmark {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 3px;
+  text-shadow: -1.5px 0 alpha(@ctp_red, 0.75), 1.5px 0 alpha(@ctp_cyan, 0.75);
+}
+
+.ctp-tagline {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: @ctp_dim;
+}
+
+/* Company switch: flat, square, the active one in acid yellow. */
+.ctp-company {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 6px 18px;
+  border-radius: 0;
+  color: @ctp_cyan;
+  background: alpha(@ctp_cyan, 0.06);
+  box-shadow: inset 0 0 0 1px alpha(@ctp_cyan, 0.35);
+}
+
+.ctp-company:checked {
+  color: #0b0b0b;
+  background: @ctp_yellow;
+  box-shadow: 0 0 14px alpha(@ctp_yellow, 0.45);
+}
+
+.ctp-strip searchentry {
+  border-radius: 0;
+  background: alpha(#000000, 0.35);
+  box-shadow: inset 0 0 0 1px alpha(@ctp_cyan, 0.25);
+}
+
+.ctp-total {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: @ctp_yellow;
+  text-shadow: 0 0 10px alpha(@ctp_yellow, 0.35);
+  font-feature-settings: "tnum";
+}
+
+/* Report cards: square, cyan hairline, yellow notch top left. */
+.ctp-group {
+  padding: 4px 12px 4px 12px;
+  border-radius: 0;
+  border: 1px solid alpha(@ctp_cyan, 0.16);
+  background-color: alpha(@ctp_panel, 0.82);
+  background-image: linear-gradient(135deg, @ctp_yellow 0px, @ctp_yellow 10px, transparent 10px);
+  box-shadow: 0 10px 30px alpha(#000000, 0.45);
+}
+
+.ctp-group-head {
+  border-radius: 0;
+  padding: 8px 4px;
+}
+
+.ctp-group-head image {
+  color: @ctp_yellow;
+}
+
+.ctp-group-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: @ctp_yellow;
+  text-shadow: 0 0 10px alpha(@ctp_yellow, 0.35);
+}
+
+.ctp-count {
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 1px 8px;
+  color: @ctp_cyan;
+  border: 1px solid alpha(@ctp_cyan, 0.35);
+}
+
+.ctp-row {
+  padding: 9px 4px 9px 26px;
+  border-top: 1px dashed alpha(@ctp_cyan, 0.10);
+}
+
+.ctp-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.ctp-meta {
+  font-family: "JetBrains Mono", "Hack", "DejaVu Sans Mono", monospace;
+  font-weight: 400;
+  font-size: 11px;
+  color: alpha(@ctp_cyan, 0.75);
+}
+
+.ctp-pill {
+  font-family: "Orbitron", sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 2px 8px;
+  border-left: 3px solid;
+}
+.ctp-pill.todo       { background: alpha(@ctp_magenta, 0.12); color: @ctp_magenta; border-color: @ctp_magenta; }
+.ctp-pill.inprogress { background: alpha(@ctp_cyan, 0.12);    color: @ctp_cyan;    border-color: @ctp_cyan; }
+.ctp-pill.done       { background: alpha(@ctp_green, 0.12);   color: @ctp_green;   border-color: @ctp_green; }
+
+.ctp-done,
+.ctp-start {
+  font-family: "Orbitron", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  border-radius: 0;
+  padding: 4px 12px;
+}
+
+.ctp-done {
+  color: #0b0b0b;
+  background: @ctp_green;
+}
+
+.ctp-done:hover {
+  box-shadow: 0 0 12px alpha(@ctp_green, 0.6);
+}
+
+.ctp-start {
+  color: @ctp_cyan;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px alpha(@ctp_cyan, 0.4);
+}
+
+.ctp-settings preferencesgroup > box > box > box > label.title,
+.ctp-settings preferencesgroup label.heading {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: @ctp_yellow;
+}
+
+.ctp-settings list.boxed-list {
+  border-radius: 0;
+  background-color: alpha(@ctp_panel, 0.82);
+  box-shadow: 0 0 0 1px alpha(@ctp_cyan, 0.16);
+}

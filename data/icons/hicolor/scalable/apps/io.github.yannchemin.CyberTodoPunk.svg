@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Dark plate with two cut corners (MetaMonitor's mark), three checklist
+       rows: done (green), in progress (cyan), to do (magenta). -->
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#151827"/>
+      <stop offset="1" stop-color="#07080e"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path d="M24 8h96v92l-20 20H8V24z" fill="url(#plate)" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M24 8h30l-8 8H16v30l-8 8V24z" fill="#fcee0a"/>
+  <g filter="url(#glow)">
+    <rect x="26" y="34" width="14" height="14" fill="none" stroke="#39ff88" stroke-width="3"/>
+    <path d="M28 40l5 5 9-12" fill="none" stroke="#39ff88" stroke-width="4" stroke-linecap="square"/>
+    <rect x="48" y="38" width="50" height="6" fill="#39ff88" opacity="0.55"/>
+    <rect x="26" y="58" width="14" height="14" fill="none" stroke="#00f0ff" stroke-width="3"/>
+    <rect x="31" y="63" width="4" height="4" fill="#00f0ff"/>
+    <rect x="48" y="62" width="40" height="6" fill="#00f0ff"/>
+    <rect x="26" y="82" width="14" height="14" fill="none" stroke="#ff2a6d" stroke-width="3"/>
+    <rect x="48" y="86" width="46" height="6" fill="#ff2a6d"/>
+  </g>
+  <g fill="#fcee0a">
+    <rect x="96" y="104" width="3" height="8"/><rect x="102" y="104" width="3" height="8"/>
+    <rect x="108" y="104" width="3" height="8" transform="skewX(0)"/>
+  </g>
+</svg>

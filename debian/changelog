@@ -1,0 +1,7 @@
+cybertodopunk (0.1.0) unstable; urgency=medium
+
+  * First release: ACTIONS.tex format and LaTeX table, CLI (list, done,
+    start, reopen, switch, config, new, convert, check), GTK 4 window and
+    GNOME Shell top-bar menu.
+
+ -- Yann Chemin <dr.yann.chemin@gmail.com>  Fri, 16 Oct 2026 12:00:00 +0200

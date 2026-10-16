@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.yannchemin.CyberTodoPunk</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Unlicense</project_license>
+  <name>CyberTodoPunk</name>
+  <summary>Meeting actions from LaTeX reports, in the GNOME top bar</summary>
+  <description>
+    <p>CyberTodoPunk lists the open actions you own in the ACTIONS.tex files of your
+    meeting reports, one list per company, and checks them off by writing the
+    completion time back into the report.</p>
+  </description>
+  <launchable type="desktop-id">io.github.yannchemin.CyberTodoPunk.desktop</launchable>
+  <url type="homepage">https://github.com/YannChemin/cybertodopunk</url>
+  <developer id="io.github.yannchemin"><name>Yann Chemin</name></developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-10-16"/>
+  </releases>
+</component>

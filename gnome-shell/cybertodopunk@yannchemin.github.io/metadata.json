@@ -1,0 +1,8 @@
+{
+  "uuid": "cybertodopunk@yannchemin.github.io",
+  "name": "CyberTodoPunk",
+  "description": "Top-bar TODO menu of my meeting actions, read from the ACTIONS.tex files of LaTeX meeting reports, one list per company. DONE writes the completion time back into the report.",
+  "shell-version": ["46", "47", "48", "49"],
+  "url": "https://github.com/YannChemin/cybertodopunk",
+  "version-name": "0.1.0"
+}

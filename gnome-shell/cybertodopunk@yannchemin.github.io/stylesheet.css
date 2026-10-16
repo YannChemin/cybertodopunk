@@ -1,0 +1,98 @@
+/* CyberTodoPunk top-bar menu: same neon tokens as the app and MetaMonitor.
+ * SPDX-License-Identifier: Unlicense
+ */
+
+.ctp-panel-box {
+  spacing: 5px;
+}
+
+.ctp-panel-label {
+  font-weight: 800;
+  color: #fcee0a;
+}
+
+.ctp-panel-count {
+  font-weight: 800;
+  font-feature-settings: "tnum";
+  color: #07080e;
+  background-color: #00f0ff;
+  padding: 0 5px;
+  border-radius: 0;
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.7);
+}
+
+.ctp-switch {
+  spacing: 0;
+}
+
+.ctp-company-button {
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 0;
+  color: #00f0ff;
+  background-color: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+}
+
+.ctp-company-button:hover {
+  background-color: rgba(0, 240, 255, 0.16);
+}
+
+.ctp-company-button:checked {
+  color: #0b0b0b;
+  background-color: #fcee0a;
+  border-color: #fcee0a;
+  box-shadow: 0 0 12px rgba(252, 238, 10, 0.45);
+}
+
+.ctp-scroll {
+  max-height: 620px;
+}
+
+.ctp-group-item .popup-menu-item-expander {
+  min-width: 12px;
+}
+
+.ctp-group-item > StLabel:first-child {
+  font-weight: 800;
+  color: #fcee0a;
+}
+
+.ctp-group-count {
+  font-weight: 700;
+  font-feature-settings: "tnum";
+  padding: 0 7px;
+  margin-right: 6px;
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.45);
+}
+
+.ctp-task-item {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  spacing: 12px;
+  border-left: 3px solid #ff2a6d;
+}
+
+.ctp-task-text {
+  font-weight: 600;
+}
+
+.ctp-task-meta {
+  font-family: monospace;
+  font-size: 85%;
+  color: rgba(0, 240, 255, 0.8);
+}
+
+.ctp-done-button {
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 0;
+  color: #07080e;
+  background-color: #39ff88;
+}
+
+.ctp-done-button:hover,
+.ctp-done-button:focus {
+  box-shadow: 0 0 10px rgba(57, 255, 136, 0.8);
+}

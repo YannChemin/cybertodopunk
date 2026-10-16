@@ -1,0 +1,74 @@
+%% ACTIONS.tex: the actions planned in this meeting, read and checked off by
+%% cybertodopunk (https://github.com/YannChemin/cybertodopunk); format 1.
+%% Included by the report with \input{ACTIONS} in its action-plan section.
+%%
+%% One action per \actionitem, with six arguments:
+%%   \actionitem{ID}{Owner}{Due}{Status}{Completed}
+%%     {Description}
+%%   ID         unique in this file (A01, A02, ...)
+%%   Owner      "ORG --- SURNAME", "ORG + ORG", ...; cybertodopunk shows an
+%%              action to the user whose surname (or alias) appears here
+%%   Due        free text: 14/10, --, Mi-avr.\ 2027, ...
+%%   Status     todo | inprogress | done
+%%   Completed  YYYY-MM-DD HH:MM, written by cybertodopunk when checked off;
+%%              empty while the action is open
+%% Edit freely between the actions; keep each \actionitem's six arguments.
+\makeatletter
+\@ifundefined{actionplan}{%
+  \providecommand{\owner}[1]{\textbf{#1}}%
+  \providecommand{\deadline}[1]{\textbf{#1}}%
+  \@ifundefined{iflanguage}{\def\ctp@fr{\@secondoftwo}}%
+    {\def\ctp@fr{\iflanguage{french}}}%
+  \providecommand{\todo}{\textbf{\ctp@fr{À faire}{To do}}}%
+  \providecommand{\inprogress}{\textbf{\ctp@fr{En cours}{In progress}}}%
+  \providecommand{\done}{\textbf{\ctp@fr{Fait}{Done}}}%
+  \@ifundefined{\string\color@rowalt}{\definecolor{rowalt}{RGB}{235,241,250}}{}%
+  \@ifundefined{\string\color@tablehead}{\definecolor{tablehead}{RGB}{10,35,75}}{}%
+  \newcount\ctp@row
+  \def\ctp@status#1#2{%
+    \def\ctp@s{#1}\def\ctp@t{done}%
+    \ifx\ctp@s\ctp@t \done
+      \if\relax\detokenize{#2}\relax\else\newline{\scriptsize\detokenize{#2}}\fi
+    \else\def\ctp@t{inprogress}%
+      \ifx\ctp@s\ctp@t \inprogress\else\todo\fi
+    \fi}%
+  % Even rows are shaded, as in the hand-written tables.
+  \newcommand{\actionitem}[6]{%
+    \noalign{\global\advance\ctp@row\@ne}%
+    \ifodd\ctp@row\expandafter\@gobble\else\expandafter\@firstofone\fi
+      {\rowcolor{rowalt}}%
+    #6 & \owner{#2} & \deadline{#3} & \ctp@status{#4}{#5} \\}%
+  \newenvironment{actionplan}{%
+    \global\ctp@row\z@
+    \begin{longtable}{@{}>{\raggedright\arraybackslash}p{7.2cm}
+                        >{\raggedright\arraybackslash}p{3.4cm}
+                        >{\raggedright\arraybackslash}p{1.6cm} p{2.0cm}@{}}
+    \toprule
+    \rowcolor{tablehead}
+    \color{white}\textbf{Action} &
+    \color{white}\textbf{\ctp@fr{Responsable}{Owner}} &
+    \color{white}\textbf{\ctp@fr{Échéance}{Due}} &
+    \color{white}\textbf{\ctp@fr{Statut}{Status}} \\
+    \midrule
+    \endhead
+  }{%
+    \bottomrule
+    \end{longtable}%
+  }%
+}{}
+\makeatother
+%% Template: copy as ACTIONS.tex next to the report (cybertodopunk new does it
+%% with no action).  Actions containing <<...>> are placeholders and are ignored.
+
+\begin{actionplan}
+
+\actionitem{A01}{ACME --- <<NAME>>}{DD/MM}{todo}{}
+  {<<Description action 1>>}
+
+\actionitem{A02}{<<ORG>>}{--}{todo}{}
+  {<<Description action 2>>}
+
+\actionitem{A03}{ACME + <<ORG>>}{--}{todo}{}
+  {<<Description action 3>>}
+
+\end{actionplan}

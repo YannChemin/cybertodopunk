@@ -1,0 +1,59 @@
+.TH CYBERTODOPUNK 1 "October 2026" "cybertodopunk 0.1.0" "User Commands"
+.SH NAME
+cybertodopunk \- meeting actions from the ACTIONS.tex files of LaTeX reports
+.SH SYNOPSIS
+.B cybertodopunk
+.br
+.B cybertodopunk list
+[\fB\-\-json\fR] [\fB\-\-company\fR \fIC\fR | \fB\-\-all\-companies\fR] [\fB\-\-everyone\fR] [\fB\-\-done\fR]
+.br
+.B cybertodopunk done
+\fIFILE\fR \fIID\fR [\fB\-\-at\fR "\fIYYYY\-MM\-DD HH:MM\fR"]
+.br
+.B cybertodopunk start
+|
+.B reopen
+\fIFILE\fR \fIID\fR
+.br
+.B cybertodopunk switch
+\fICOMPANY\fR
+.br
+.B cybertodopunk config
+[\fBshow\fR | \fBname\fR \fINAME\fR | \fBalias\fR|\fBpath\fR|\fBcompany\fR \fBadd\fR|\fBrm\fR \fIVALUE\fR | \fBteam on\fR|\fBoff\fR]
+.br
+.B cybertodopunk new
+[\fIDIR\fR]
+.br
+.B cybertodopunk convert
+\fIREPORT.tex\fR... [\fB\-\-dry\-run\fR] [\fB\-\-input\fR \fIPATH\fR]
+.br
+.B cybertodopunk check
+[\fIDIR\fR...]
+.SH DESCRIPTION
+A meeting report folder is named \fIYYYYMMDD_COMPANY_subject\fR and holds an
+\fBACTIONS.tex\fR that the report includes with \fB\\input{ACTIONS}\fR in its
+action-plan section. Each action is one
+\fB\\actionitem{\fIID\fB}{\fIOwner\fB}{\fIDue\fB}{\fIStatus\fB}{\fICompleted\fB}{\fIDescription\fB}\fR,
+with status \fBtodo\fR, \fBinprogress\fR or \fBdone\fR.
+.PP
+Without arguments, the window opens. \fBlist\fR shows the open actions whose
+owner contains the configured surname (the word in capitals of the full name,
+else its last word) or an alias, for the active company. \fBdone\fR writes
+the status and the completion time into ACTIONS.tex, so the next compilation
+of the report shows them; \fBreopen\fR undoes it.
+.PP
+\fBconvert\fR moves the hand\-written action longtable of an older report into
+a new ACTIONS.tex and replaces it with \fB\\input{ACTIONS}\fR.
+\fBcheck\fR parses every ACTIONS.tex found and reports errors.
+.SH FILES
+.TP
+.I ~/.config/cybertodopunk/config.json
+Settings (\fBCYBERTODOPUNK_CONFIG\fR overrides the path).
+.TP
+.I /usr/share/cybertodopunk/latex/ACTIONS\-TEMPLATE.tex
+The ACTIONS.tex template.
+.SH SEE ALSO
+.BR metamonitor (1),
+.BR latexmk (1)
+.SH AUTHOR
+Yann Chemin. Public domain (Unlicense).

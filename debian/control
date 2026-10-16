@@ -1,0 +1,36 @@
+Source: cybertodopunk
+Section: utils
+Priority: optional
+Maintainer: Yann Chemin <dr.yann.chemin@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3:any,
+               python3-pytest <!nocheck>,
+Standards-Version: 4.7.2
+Homepage: https://github.com/YannChemin/cybertodopunk
+Rules-Requires-Root: no
+
+Package: cybertodopunk
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3-gi,
+         gir1.2-gtk-4.0 (>= 4.14),
+         gir1.2-adw-1 (>= 1.5),
+Recommends: fonts-jetbrains-mono,
+            gnome-shell (>= 46),
+            latexmk,
+Suggests: metamonitor,
+          gnome-shell-extension-prefs
+Description: meeting actions from LaTeX reports, in the GNOME top bar
+ CyberTodoPunk reads the ACTIONS.tex files that meeting reports (compte
+ rendus) include in their action-plan section, and lists the open actions
+ owned by the user, one list per company (report folders named
+ YYYYMMDD_<COMPANY>_<subject>).
+  - A GNOME Shell top-bar "TODO" menu: company switch, one entry per report
+    unrolling into its actions, DONE to check one off.
+  - Checking an action off writes its completion time into ACTIONS.tex, so
+    the next compilation of the report shows when it was done.
+  - A GTK 4 / libadwaita window for the list and the settings (full name,
+    aliases, search folders, companies), and a command line
+    (list, done, reopen, convert, check).
